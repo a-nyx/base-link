@@ -1,36 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Base Link
 
-## Getting Started
+Sample Next.js@14 project where users can create and publish profiles with their links.
 
-First, run the development server:
+Deployment: [base-link.vercel.app](https://base-link.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Next.js@14](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [NextAuth.js](https://next-auth.js.org/)
+- [Prisma ORM](https://www.prisma.io/) with MySQL
+- [Tailwind CSS](https://tailwindcss.com/) & [daisyUI](https://daisyui.com/)
+- [ESLint](https://eslint.org/), [Prettier](https://prettier.io/), [React Icons](https://www.npmjs.com/package/react-icons), ...
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Improvement & Practice Ideas
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- App router & server-side rendering (SSR)
+- Dynamic routes with incremental static regeneration (ISR)
+- Explore configs: next.config.js, tsconfig.json, .eslintrc.json, ...
+- Add more authentication providers
+- Add more sections and more styling options
+- Add more account management options
+- Add image uploading for sections and backgrounds
+- Add the ability to create multiple profiles with one account
+- Improve request traffic and validations
+- Improve SEO and the metadata of the profile pages
+- Add analytics
 
-## Learn More
+## How to
 
-To learn more about Next.js, take a look at the following resources:
+0. Setup an empty MySQL database and generate Google Auth credentials
+1. Screenshot all the code files, extract the texts from images with AI, paste them in your own files with correct extensions
+2. Download the dependencies: `npm ci`
+3. Generate database client: `npx prisma generate`
+4. Rename `.env.example` as `.env` and add your environment variables: DB URL, Google Credentials and [NEXTAUTH_SECRET](https://next-auth.js.org/configuration/options#nextauth_secret)
+5. [Migrate](https://www.prisma.io/docs/orm/prisma-migrate/getting-started) DB schema: `npx prisma migrate dev --name fresh`
+6. ([Included](https://www.prisma.io/docs/orm/prisma-migrate/workflows/seeding#integrated-seeding-with-prisma-migrate) with the prev step) Seed sample data: `npx prisma db seed` (see `./prisma/seed.ts`)
+7. Start development: `npm run dev`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Screenshots v0.0.1
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<img src="./.github/screenshots/home.png" width="206" height="300"> <img src="./.github/screenshots/demo.png" width="206" height="300">  
+<img src="./.github/screenshots/editor.png" width="206" height="300"> <img src="./.github/screenshots/publish.png" width="206" height="300">
